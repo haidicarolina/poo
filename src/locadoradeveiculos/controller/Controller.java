@@ -1,23 +1,29 @@
 package locadoradeveiculos.controller;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
+import locadoradeveiculos.model.Cliente;
+
 public class Controller {
+	
+	private ArrayList<Cliente> listaDeClientes = new ArrayList<Cliente>();
 	
 	public void exibeMenu() {
 		int op = 0;
 		 do {
            op = menu();
-	            
+           System.out.println(op);
            switch (op) {
-           	case 0: break; 
-               case 1:  //new VeiculoController().createVeiculo(con);
-                        break;
-	                    
+           	   case 0: break; 
+               case 1: 
+                        break;	                    
                case 2:  //new VeiculoController().listarVeiculos(con);
 	                     break;      
-               case 3:  //   new CidadeController().createCidade(con);
-	                     break;
+               case 3:  listaDeClientes.add(new ClienteController().createCliente());
+	                    break;
                default: break;
 	              }
        } while (op > 0 && op < 10); 		
@@ -50,6 +56,7 @@ public class Controller {
         System.out.println("0 - Sair");
         System.out.println("Digite a opção: \n");
         Scanner scan = new Scanner(System.in);
+
         return scan.nextInt();
     }
 }
