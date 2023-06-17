@@ -7,8 +7,8 @@ import javax.swing.JOptionPane;
 public class Locacao {
     private Date dataInicio;
     private Date dataFim;
-	private Veiculo veiculo;
-	private Cliente cliente;
+	private int idVeiculo;
+	private int idCliente;
 
     public Date getDataInicio() {
 		return dataInicio;
@@ -26,24 +26,24 @@ public class Locacao {
 		this.dataFim = dataFim;
 	}
 
-    public Veiculo getVeiculo() {
-		return veiculo;
+    public int getIdVeiculo() {
+		return idVeiculo;
 	}
 
-	public void setVeiculo(Veiculo veiculo) {
-		this.veiculo = veiculo;
+	public void setIdVeiculo(int veiculo) {
+		this.idVeiculo = veiculo;
 	}
 
-    public Cliente getCliente() {
-		return cliente;
+    public int getIdCliente() {
+		return idCliente;
 	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setIdCliente(int cliente) {
+		this.idCliente = cliente;
 	}
 
     public Object[] todasInformacoes() {
-        return new Object[]{getDataInicio(), getDataFim(), getVeiculo(), getCliente()};
+        return new Object[]{getDataInicio(), getDataFim(), getIdVeiculo(), getIdCliente()};
     }
 
     public static void  visualizarLocacao(String[] args) {
