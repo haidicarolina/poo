@@ -1,20 +1,15 @@
 package locadoradeveiculos.controller;
 
-import java.sql.Date;
-
-import javax.swing.JOptionPane;
-
 import locadoradeveiculos.model.Locacao;
 import locadoradeveiculos.view.EntradaSaida;
 
 public class LocacaoController {
 	
 	public Locacao createLocacao() {
-		System.out.println("teste");
 		Locacao locacao = new Locacao();
 
 		int idVeiculo, idCliente;
-		Date dataInicio, dataFim;
+		String dataInicio, dataFim;
 		
 		idVeiculo = EntradaSaida.solicitaInt("id do veículo");
 		locacao.setIdVeiculo(idVeiculo);
@@ -22,12 +17,11 @@ public class LocacaoController {
 		idCliente = EntradaSaida.solicitaInt("id do cliente");
 		locacao.setIdCliente(idCliente);
 		
-		// dataInicio = EntradaSaida.solicitaData();
-		// locacao.setData(dataInicio);
-
-		// dataFim = EntradaSaida.solicitaData();
-		// locacao.setDataFim(dataInicio);
-
+		dataInicio = EntradaSaida.solicitaString("a data de início");
+		locacao.setDataInicio(dataInicio);
+		 
+		dataFim = EntradaSaida.solicitaString("a data final");
+		locacao.setDataFim(dataFim);
 	
 		return locacao;
 	}

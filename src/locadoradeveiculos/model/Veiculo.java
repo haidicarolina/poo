@@ -1,16 +1,14 @@
 package locadoradeveiculos.model;
 
+import locadoradeveiculos.view.EntradaSaida;
+
 public class Veiculo {
     private int id;
-	private boolean disponibilidade;
+	private String disponibilidade;
 	private String placa;
     private String cor;
     private Modelo modelo;
-
-    public void alterarDisponibilidade(Boolean disponibilidade) {
-        this.disponibilidade = disponibilidade;
-    }
-    
+ 
     public int getId() {
 		return id;
 	}
@@ -19,9 +17,13 @@ public class Veiculo {
 		this.id = id;
 	}
 
-    public boolean getDisponibilidade() {
+    public String getDisponibilidade() {
 		return disponibilidade;
 	}
+    
+    public void setDisponibilidade(String disponibilidade) {
+    	this.disponibilidade = disponibilidade;
+    }
 
     public String getPlaca() {
 		return placa;
@@ -46,15 +48,9 @@ public class Veiculo {
 	public void setModelo(Modelo modelo) {
 		this.modelo = modelo;
 	}
-    
-    public Object[] todasInformacoes() {
-        return new Object[]{getId(), getDisponibilidade(), getPlaca(), getCor(), getModelo()};
-    }
-
-    // public String visualizarVeiculo() {}
-
-    public static void  visualizarVeiculo(String[] args) {
-        Object[] infos = new Veiculo().todasInformacoes();
-        System.out.println("Informacoes do Veiculo: \nId: " +infos[0] + "\nDisponibilidade: " + infos[1] + "\nPlaca: " + infos[2] + "\nCor: " + infos[3] + "\nModelo: " + infos[4] );
+	
+	public void alterarDisponibilidade() {
+    	String disponibilidade = EntradaSaida.solicitaString("Disponibilidade do veículo (Disponível / Indisponível)");
+    	this.disponibilidade = disponibilidade;
     }
 }

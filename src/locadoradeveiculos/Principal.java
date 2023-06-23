@@ -1,7 +1,5 @@
 package locadoradeveiculos;
 
-import java.util.Scanner;
-
 import locadoradeveiculos.controller.Controller;
 
 public class Principal {

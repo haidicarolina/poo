@@ -1,14 +1,11 @@
 package locadoradeveiculos.controller;
 
-import javax.swing.JOptionPane;
-
 import locadoradeveiculos.model.Modelo;
 import locadoradeveiculos.view.EntradaSaida;
 
 public class ModeloController {
 	
 	public Modelo createModelo() {
-		System.out.println("teste");
 		Modelo modelo = new Modelo();
 
 		int id;

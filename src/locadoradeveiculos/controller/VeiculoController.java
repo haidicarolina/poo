@@ -1,7 +1,5 @@
 package locadoradeveiculos.controller;
 
-import javax.swing.JOptionPane;
-
 import locadoradeveiculos.model.Modelo;
 import locadoradeveiculos.model.Veiculo;
 import locadoradeveiculos.view.EntradaSaida;
@@ -9,13 +7,11 @@ import locadoradeveiculos.view.EntradaSaida;
 public class VeiculoController {
 	
 	public Veiculo createVeiculo() {
-		System.out.println("teste");
+		Modelo modelo = new Modelo();
 		Veiculo veiculo = new Veiculo();
 
-		int id;
-		String placa, cor;
-		Boolean disponibilidade;
-		Modelo modelo;
+		int id, idModelo;
+		String placa, cor, fabricante, nomeModelo, disponibilidade;
 		
 		id = EntradaSaida.solicitaInt("id do veiculo");
 		veiculo.setId(id);
@@ -26,11 +22,20 @@ public class VeiculoController {
 		cor = EntradaSaida.solicitaString("cor do veículo");
 		veiculo.setCor(cor);
 		
-		disponibilidade = EntradaSaida.solicitaBol(true || false);
-		veiculo.alterarDisponibilidade(disponibilidade);
+		disponibilidade = EntradaSaida.solicitaString("Disponibilidade do veículo (Disponível / Indisponível)");
+		veiculo.setDisponibilidade(disponibilidade);
+			
+		idModelo = EntradaSaida.solicitaInt("id do modelo");
 		
-		// modelo = EntradaSaida.solicitaModelo("Modelo");
-		// veiculo.setModelo(modelo);		
+		modelo.setId(idModelo);
+		
+		fabricante = EntradaSaida.solicitaString("nome do fabricante");
+		modelo.setFabricante(fabricante);
+		
+		nomeModelo = EntradaSaida.solicitaString("nome do modelo");
+		modelo.setNome(nomeModelo);
+		
+		veiculo.setModelo(modelo);	
 		
 		return veiculo;
 	}

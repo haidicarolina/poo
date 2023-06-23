@@ -1,28 +1,24 @@
 package locadoradeveiculos.model;
 
-import java.sql.Date;
-
-import javax.swing.JOptionPane;
-
 public class Locacao {
-    private Date dataInicio;
-    private Date dataFim;
+    private String dataInicio;
+    private String dataFim;
 	private int idVeiculo;
 	private int idCliente;
 
-    public Date getDataInicio() {
+    public String getDataInicio() {
 		return dataInicio;
 	}
 
-	public void setDataInicio(Date dataInicio) {
+	public void setDataInicio(String dataInicio) {
 		this.dataInicio = dataInicio;
 	}
 
-    public Date getDataFim() {
+    public String getDataFim() {
 		return dataFim;
 	}
 
-	public void setDataFim(Date dataFim) {
+	public void setDataFim(String dataFim) {
 		this.dataFim = dataFim;
 	}
 
@@ -45,10 +41,11 @@ public class Locacao {
     public Object[] todasInformacoes() {
         return new Object[]{getDataInicio(), getDataFim(), getIdVeiculo(), getIdCliente()};
     }
+    
 
-    public static void  visualizarLocacao(String[] args) {
+    public String visualizarLocacao(String[] arg) {
         Object[] infos = new Locacao().todasInformacoes();
-        System.out.println("Informacoes do Locacao: \nData Inicio: " +infos[0] + "\nData Fim: " + infos[1] + "\nVeiculo: " + infos[2] + "\nCliente: " + infos[3]);
-        JOptionPane.showMessageDialog(null, "Informacoes do Locacao: \nData Inicio: " +infos[0] + "\nData Fim: " + infos[1] + "\nVeiculo: " + infos[2] + "\nCliente: " + infos[3]);
+        String teste = "Informacoes do Locacao: \nData Inicio: " +infos[0] + "\nData Fim: " + infos[1] + "\nVeiculo: " + infos[2] + "\nCliente: " + infos[3];
+        return teste;
     }
 }

@@ -1,21 +1,21 @@
 package locadoradeveiculos.controller;
 
-import javax.swing.JOptionPane;
-
 import locadoradeveiculos.model.Cliente;
 import locadoradeveiculos.view.EntradaSaida;
 
 public class ClienteController {
 	
 	public Cliente createCliente() {
-		System.out.println("teste");
 		Cliente cliente = new Cliente();
 		
 		int id, numero;
-		String nome, sobrenome, telefone, email, rua, bairro, cidade;
+		String nome, cpf, sobrenome, telefone, email, rua, bairro, cidade;
 		
 		id = EntradaSaida.solicitaInt("id do cliente");
 		cliente.setId(id);
+		
+		cpf = EntradaSaida.solicitaString("cpf do cliente");
+		cliente.setCpf(cpf);
 		
 		nome = EntradaSaida.solicitaString("nome do cliente");
 		cliente.setNome(nome);
@@ -38,7 +38,7 @@ public class ClienteController {
 		rua = EntradaSaida.solicitaString("rua do cliente");
 		cliente.setRua(rua);
 		
-		numero = EntradaSaida.solicitaInt("numero do endereço do cliente");
+		numero = EntradaSaida.solicitaInt("numero do endereco do cliente");
 		cliente.setNumero(numero);		
 		
 		return cliente;
